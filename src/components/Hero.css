@@ -99,7 +99,7 @@
   border: none;
   font-size: 1rem;
   padding: 14px 28px;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 .btn-accent-gradient:hover {
@@ -173,7 +173,7 @@
   max-width: 680px;
   background: rgba(17, 24, 39, 0.65);
   border: 1px solid var(--color-border);
-  border-radius: 12px;
+  border-radius: 20px;
   box-shadow: var(--glow-card);
   -webkit-backdrop-filter: blur(16px);
   backdrop-filter: blur(16px);
@@ -233,7 +233,7 @@
   color: var(--color-accent);
   border: 1px solid rgba(0, 217, 255, 0.25);
   padding: 2px 8px;
-  border-radius: 4px;
+  border-radius: 6px;
   background: rgba(0, 217, 255, 0.05);
 }
 
@@ -251,7 +251,7 @@
   align-items: center;
   position: relative;
   height: 100px;
-  border-radius: 8px;
+  border-radius: 12px;
   background: rgba(10, 15, 30, 0.5);
   padding: 0 24px;
   border: 1px solid rgba(255, 255, 255, 0.03);
@@ -280,7 +280,7 @@
   background: rgba(17, 24, 39, 0.9);
   border: 1px solid var(--color-border);
   padding: 8px 12px;
-  border-radius: 6px;
+  border-radius: 12px;
 }
 
 .node-agent {
@@ -348,7 +348,7 @@
 .mockup-stat-card {
   background: rgba(10, 15, 30, 0.4);
   border: 1px solid rgba(255, 255, 255, 0.03);
-  border-radius: 6px;
+  border-radius: 12px;
   padding: 10px 16px;
   display: flex;
   flex-direction: column;
@@ -391,7 +391,7 @@
 /* Console Logs */
 .mockup-console {
   background: rgba(5, 8, 16, 0.85);
-  border-radius: 6px;
+  border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.05);
   padding: 12px 16px;
   font-family: monospace;
@@ -490,7 +490,7 @@
 
   .node-source, .node-destination {
     padding: 4px 8px;
-    border-radius: 4px;
+    border-radius: 8px;
   }
 
   .node-label {
