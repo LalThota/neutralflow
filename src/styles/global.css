@@ -1,0 +1,166 @@
+/* CSS VARIABLES & DESIGN TOKENS */
+:root {
+  /* Colors */
+  --color-bg: #172B36;           /* Oceanic Noir — page background */
+  --color-bg-card: #1E333E;      /* elevated card surface */
+  --color-bg-elevated: #244250;  /* hover / active surface */
+  --color-border: rgba(17, 76, 90, 0.4); /* Nocturnal Expedition border */
+  --color-border-bright: rgba(255, 200, 1, 0.55); /* Forsythia border */
+  --color-primary: #FFC801;      /* Forsythia — CTA, active states */
+  --color-primary-hover: #FFD633;
+  --color-accent: #FF9932;       /* Deep Saffron — highlights, stats */
+  --color-text: #F1F6F4;         /* Arctic Powder */
+  --color-text-muted: #D9E8E2;   /* Mystic Mint */
+  --color-text-subtle: rgba(217, 232, 226, 0.5);
+  --color-success: #10B981;
+  --color-warning: #FF9932;
+
+  /* Typography */
+  --font-display: 'JetBrains Mono', monospace;   /* H1–H3, brand wordmark */
+  --font-body: 'Inter', sans-serif;              /* body, UI labels, captions */
+
+  /* Transitions */
+  --transition-fast: 150ms ease-out;   /* hover micro-interactions */
+  --transition-normal: 200ms ease-out;  /* toggles, icon swaps */
+  --transition-layout: 350ms ease-in-out; /* structural reflows */
+  
+  /* Glow shadows */
+  --glow-primary: 0 0 20px rgba(255, 200, 1, 0.25);
+  --glow-accent: 0 0 20px rgba(255, 153, 50, 0.25);
+  --glow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+/* RESET & BASE STYLES */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  background: none;
+  border: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* TYPOGRAPHY UTILITIES */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+/* GLASSMORPHISM UTILITY */
+.glass-card {
+  background: rgba(30, 51, 62, 0.75);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--glow-card);
+  transition: transform var(--transition-normal), border-color var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.glass-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-border-bright);
+  box-shadow: var(--glow-card), 0 0 15px rgba(0, 217, 255, 0.1);
+}
+
+/* ENTRY SEQUENCE ANIMATIONS */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Animation Classes applied to hero elements */
+.animate-fade-in {
+  opacity: 0;
+  animation: fadeIn var(--dur, 200ms) ease-out forwards;
+  animation-delay: var(--delay, 0ms);
+}
+
+.animate-slide-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUp var(--dur, 200ms) ease-out forwards;
+  animation-delay: var(--delay, 0ms);
+}
+
+.animate-scale-in {
+  opacity: 0;
+  transform: scale(0.96);
+  animation: scaleIn var(--dur, 180ms) ease-out forwards;
+  animation-delay: var(--delay, 0ms);
+}
+
+/* Global Section styling */
+main {
+  width: 100%;
+}
+
+section {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 24px;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 60px 16px;
+  }
+}
